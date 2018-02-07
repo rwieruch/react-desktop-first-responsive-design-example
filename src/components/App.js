@@ -49,6 +49,8 @@ class App extends Component {
 
     this.state = {
       zoom: 1,
+      navigation: new Array(15).fill(0).map(loremIpsum),
+      list: new Array(50).fill(0).map(loremIpsum),
     };
 
     this.handleZoomChange = this.handleZoomChange.bind(this);
@@ -74,18 +76,18 @@ class App extends Component {
               Change Zoom
             </Select>
           </NavItem>
-          {new Array(15).fill(0).map((i, k) =>
+          {this.state.navigation.map((v, k) =>
             <NavItem key={k}>
-              {loremIpsum()}
+              {v}
             </NavItem>
           )}
         </Nav>
         <Content>
           <List>
-            {new Array(50).fill(0).map((i, k) =>
+            {this.state.list.map((v, k) =>
               <Item key={k}>
-                <ItemParagraph>{loremIpsum()}</ItemParagraph>
-                <ItemParagraph>{loremIpsum()}</ItemParagraph>
+                <ItemParagraph>{v}</ItemParagraph>
+                <ItemParagraph>{v}</ItemParagraph>
               </Item>
             )}
           </List>
