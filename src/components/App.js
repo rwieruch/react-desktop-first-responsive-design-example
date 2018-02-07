@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import loremIpsum from 'lorem-ipsum';
 
+import Select from './Select';
+import Button from './Button';
 import Item from './Item';
 // import Item from './ItemThemed';
 
@@ -41,22 +43,36 @@ const ListActions = styled.div`
   justify-content: flex-end;
 `;
 
-const Button = styled.button`
-  border: none;
-  background: none;
-  cursor: pointer;
-  border: 1px solid #000;
-  height: 25px;
-  width: 75px;
-`;
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      zoom: 1,
+    };
+
+    this.handleZoomChange = this.handleZoomChange.bind(this);
+  }
+
+  handleZoomChange(zoom) {
+    this.setState({ zoom });
+  }
+
   render() {
     return (
       <Container>
         <Nav>
           <NavItem>
-            Select: Change Size
+            <Select
+              value={this.state.zoom}
+              options={[
+                { label: '100%', value: 1 },
+                { label: '120%', value: 1.2 },
+              ]}
+              handleChange={this.handleZoomChange}
+            >
+              Change Zoom
+            </Select>
           </NavItem>
           {new Array(15).fill(0).map((i, k) =>
             <NavItem key={k}>
@@ -74,7 +90,13 @@ class App extends Component {
             )}
           </List>
           <ListActions>
-            <Button type="button" onClick={() => {}}>Send</Button>
+            <Button
+              type="button"
+              zoom={this.state.zoom}
+              onClick={() => {}}
+            >
+              Send
+            </Button>
           </ListActions>
         </Content>
       </Container>
