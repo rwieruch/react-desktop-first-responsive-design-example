@@ -6,10 +6,12 @@
   "dependencies": {
     "core-js": "^2.5.3",
     "lorem-ipsum": "^1.0.4",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.0",
-    "styled-components": "^3.1.6"
+    "styled-components": "^3.1.6",
+    "styled-theming": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

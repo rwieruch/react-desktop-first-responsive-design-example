@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import loremIpsum from 'lorem-ipsum';
 
-import Item, { ItemParagraph } from './Item';
+import Item from './Item';
+// import Item from './ItemThemed';
 
 const Container = styled.div`
   flex: 1;
@@ -54,6 +55,9 @@ class App extends Component {
     return (
       <Container>
         <Nav>
+          <NavItem>
+            Select: Change Size
+          </NavItem>
           {new Array(15).fill(0).map((i, k) =>
             <NavItem key={k}>
               {loremIpsum()}
@@ -77,5 +81,9 @@ class App extends Component {
     );
   }
 }
+
+const ItemParagraph = styled.p`
+  flex: 1 1 100%;
+`;
 
 export default App;
