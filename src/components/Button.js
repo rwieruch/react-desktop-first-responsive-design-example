@@ -5,8 +5,9 @@ const Button = styled.button`
   background: none;
   cursor: pointer;
   border: 1px solid #000;
-  width: ${({ zoom }) => zoom * 150}px;
-  height: ${({ zoom }) => zoom * 75}px;
+  padding: 20px;
+  width: ${({ zoom }) => zoom * 100}px;
+  height: ${({ zoom }) => zoom * 50}px;
 `;
 
 export default Button;

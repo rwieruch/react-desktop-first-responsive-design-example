@@ -7,13 +7,13 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 import App from './components/App';
-import * as THEMES from './constants/theme';
+import * as LAYOUTS from './constants/layouts';
 
 // Theme could be selected depending on build to address specifc screen sizes
-const theme = THEMES.TLS_SMALL;
+const layout = LAYOUTS.NONE;
 
 ReactDOM.render(
-  <ThemeProvider theme={{ type: theme }}>
+  <ThemeProvider theme={{ layout }}>
     <App />
   </ThemeProvider>,
   document.getElementById('root')

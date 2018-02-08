@@ -1,10 +1,10 @@
 import styled, { withTheme } from 'styled-components';
 
 import * as DISPLAYS from '../constants/display';
-import * as THEMES from '../constants/theme';
+import * as LAYOUTS from '../constants/layouts';
 
 const ItemsByTheme = {
-  [THEMES.NONE]: `
+  [LAYOUTS.NONE]: `
     @media
       (max-width: ${DISPLAYS.LARGE_LARGE.width}px) and
       (max-height: ${DISPLAYS.LARGE_LARGE.height}px) {
@@ -28,7 +28,7 @@ const ItemsByTheme = {
         background: #116611;
     }
   `,
-  [THEMES.TLS_SMALL]: `
+  [LAYOUTS.TLS_SMALL]: `
     @media
       (max-width: ${DISPLAYS.LARGE_LARGE.width}px) and
       (max-height: ${DISPLAYS.LARGE_LARGE.height}px) {
@@ -50,7 +50,7 @@ const Item = styled.div`
 
   background: #000;
 
-  ${props => ItemsByTheme[props.theme.type]}
+  ${props => ItemsByTheme[props.theme.layout]}
 `;
 
 export default withTheme(Item);

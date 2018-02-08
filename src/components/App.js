@@ -7,9 +7,13 @@ import Button from './Button';
 import Item from './Item';
 // import Item from './ItemThemed';
 
+import * as ZOOMS from '../constants/zoom';
+
 const Container = styled.div`
   flex: 1;
   display: flex;
+
+  font-size: ${(props) => 1 * props.zoom}em;
 `;
 
 const Nav = styled.nav`
@@ -60,25 +64,27 @@ class App extends Component {
     this.setState({ zoom });
   }
 
+  // <NavItem>
+  //   <Select
+  //     value={this.state.zoom}
+  //     options={[
+  //       { label: '100%', value: ZOOMS.M },
+  //       { label: '120%', value: ZOOMS.L },
+  //       { label: '150%', value: ZOOMS.XL },
+  //     ]}
+  //     handleChange={this.handleZoomChange}
+  //   >
+  //     Change Zoom
+  //   </Select>
+  // </NavItem>
+
   render() {
     return (
-      <Container>
+      <Container zoom={this.state.zoom}>
         <Nav>
-          <NavItem>
-            <Select
-              value={this.state.zoom}
-              options={[
-                { label: '100%', value: 1 },
-                { label: '120%', value: 1.2 },
-              ]}
-              handleChange={this.handleZoomChange}
-            >
-              Change Zoom
-            </Select>
-          </NavItem>
           {this.state.navigation.map((v, k) =>
             <NavItem key={k}>
-              {v}
+              <h4>{v}</h4>
             </NavItem>
           )}
         </Nav>

@@ -5,7 +5,8 @@ import * as DISPLAYS from '../constants/display';
 
 // Desktop First: Go top down from largest to smallest with max-width/max-height
 const Item = styled.div`
-  margin: 20px;
+  margin: 10px;
+  padding: 10px;
   color: #fff;
   display: flex;
 
@@ -22,8 +23,6 @@ const Item = styled.div`
     (max-height: ${DISPLAYS.LARGE_MEDIUM.height}px) {
       background: #D46A6A;
   }
-
-
 
   @media
     (max-width: ${DISPLAYS.SMALL_SMALL.width}px) and
